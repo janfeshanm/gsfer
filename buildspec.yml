@@ -9,6 +9,6 @@ phases:
     commands: 
       - npm run build
 artifacts: 
-  files: 
-  - '**/*' 
-base-directory: dist
+  base-directory: dist
+  files:
+    - '**/*' 
