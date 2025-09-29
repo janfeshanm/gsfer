@@ -2,12 +2,14 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/logo.svg'
 import './App.css'
-import { getAPIURL } from './utils'
+import { getAPIURL, getDataFromAPI } from './utils'
 
 function App() {
   const [count, setCount] = useState(0)
   const [api, setApi] = useState('error')
-  getAPIURL().then(url => setApi(url));
+  getAPIURL().then(url => {
+    getDataFromAPI(url, '/').then(data => setApi(data));
+  });
   return (
     <>
       <div>
